@@ -14,6 +14,8 @@ gem "sqlite3", "~> 1.4"
 gem 'pg'
 
 gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-capybara', require: false
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
