@@ -20,6 +20,7 @@ development:
 test:
   <<: *default
   database: advertising-test
+  host: localhost
 
 production:
   <<: *default
