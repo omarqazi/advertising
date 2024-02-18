@@ -19,9 +19,9 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: advertising-test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
 		options: >-
 		      --health-cmd pg_isready
 		      --health-interval 10s
