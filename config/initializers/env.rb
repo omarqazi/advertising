@@ -1,1 +1,1 @@
-puts ENV
+puts ENV.to_h
