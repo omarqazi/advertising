@@ -20,7 +20,6 @@ development:
 test:
   <<: *default
   database: advertising_test
-  host: postgres
   url: <%= ENV['DATABASE_URL'] %>
 
 production:
