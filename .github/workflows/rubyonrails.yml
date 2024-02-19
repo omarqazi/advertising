@@ -15,21 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres
+        image: postgres:11-alpine
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: advertising_test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-		options: >-
-		      --health-cmd pg_isready
-		      --health-interval 10s
-		      --health-timeout 5s
-		      --health-retries 5
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:postgres@postgres:5432/advertising_test"
+      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -56,8 +51,8 @@ jobs:
           bundler-cache: true
       # Add or replace any other lints here
       - name: Security audit dependencies
-        run: bundle exec bundler-audit --update
+        run: bin/bundler-audit --update
       - name: Security audit application code
-        run: bundle exec brakeman -q -w2
+        run: bin/brakeman -q -w2
       - name: Lint Ruby files
-        run: bundle exec rubocop --parallel
+        run: bin/rubocop --parallel
