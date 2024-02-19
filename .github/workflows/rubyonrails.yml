@@ -20,9 +20,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: advertising_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -30,7 +30,7 @@ jobs:
           --health-retries 5
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@postgres:5432/rails_test"
+      DATABASE_URL: "postgres://postgres:postgres@postgres:5432/advertising_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
