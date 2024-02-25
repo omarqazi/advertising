@@ -19,8 +19,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  adapter: sqlite3
-  database: advertising.db
+  database: advertising_test
 
 production:
   <<: *default
