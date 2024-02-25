@@ -19,6 +19,8 @@ gem 'rubocop', require: false
 gem 'rubocop-capybara', require: false
 gem 'rubocop-rails', require: false
 
+gem 'devise'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
