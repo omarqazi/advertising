@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 phusion/passenger-ruby32
+FROM --platform=linux/amd64 phusion/passenger-ruby33
 
 ENV HOME /root
 ENV RAILS_ENV production
