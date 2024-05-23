@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    background-color: black;
+    color : white;
+ }
+
+
+ div.ad-submit-button {
+    margin-top : 10px;
+    margin-bottom : 10px;
+ }
