@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+Hello <%= @user.email %> <br /> <br />
+<% end %>
+
 Sign up: 
 <%= link_to "Sign up", new_user_registration_path %>
 <br />  
