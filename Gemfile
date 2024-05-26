@@ -41,7 +41,7 @@ gem 'redis', '>= 4.0.1'
 
 gem 'bundler-audit', require: false
 
-gem 'brakeman'
+gem 'brakeman', require: false
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
