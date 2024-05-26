@@ -4,17 +4,17 @@ class User < ApplicationRecord
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :trackable
-	has_many :submissions
+	has_many :submissions, dependent: :restrict_with_exception
 
 	def full_name
 		"#{first_name} #{last_name}"
 	end
 
-	def has_name?
+	def name?
 		!(first_name.blank? && last_name.blank?)
 	end
 
 	def display_name
-		has_name? ? full_name : email
+		name? ? full_name : email
 	end
 end

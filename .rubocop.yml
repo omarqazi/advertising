@@ -5,7 +5,19 @@ Layout/IndentationStyle:
 # Ensure the tab width is set (usually 1 tab character per indentation level)
 Layout/IndentationWidth:
   Width: 1
-  
+Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'config/environments/production.rb'
+  Max: 50  # Increase this number if needed
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*.rb'
+  Max: 25  # Increase this number if needed
+Metrics/MethodLength:
+  Max: 25  # Increase this number if needed
 require:
   - rubocop-capybara
   - rubocop-rails
