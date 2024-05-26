@@ -1,5 +1,7 @@
-class Submission < ApplicationRecord
-    validates_presence_of :title, :user_id, :media_type, :url
+# frozen_string_literal: true
 
-    belongs_to :user
+class Submission < ApplicationRecord
+	validates :title, :user_id, :media_type, :url, presence: true
+
+	belongs_to :user
 end

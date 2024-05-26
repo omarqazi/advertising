@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :trackable
-  has_many :submissions
-  
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+	# Include default devise modules. Others available are:
+	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :trackable
+	has_many :submissions
 
-  def has_name?
-    !(first_name.blank? && last_name.blank?)
-  end
+	def full_name
+		"#{first_name} #{last_name}"
+	end
 
-  def display_name
-    has_name? ? full_name : email
-  end
+	def has_name?
+		!(first_name.blank? && last_name.blank?)
+	end
+
+	def display_name
+		has_name? ? full_name : email
+	end
 end
